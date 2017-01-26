@@ -67,14 +67,38 @@
 
       /* Define your function here */
 
-      for (var i = 0; i < theArray.length, i++) { /* Inside the loop*/ }
+    /* for (var i = 0; i < theArray.length, i++) { /* Inside the loop*/
+
+    var theArray = ['A short story', 42, 55, 'Another story', 23, 12, 2, 4, 5, 6, 'bar', 'foo'];
+    var yourSum = 0;
+
+    var sumArrayContents = function(contents){
+        if (typeof contents === 'string'){
+          return yourSum += contents.length;
+        }
+        else if (typeof contents === 'number'){
+          return yourSum += contents;
+        }
+        else
+        {
+          console.log ("Not sure how to proceed with value:", arrayValue);
+        }
+    };
+
+
+    for (var i = 0; i < theArray.length; i++) {
+      var arrayValue = theArray[i];
+      sumArrayContents(arrayValue)
+    };
+
+      console.log("Success: ", yourSum === 181);
 
       /* =====================
 
       End code
 
       ===================== */
-      console.log("Success: ", yourSum === 169)
+    /*  console.log("Success: ", yourSum === 169) */
     </script>
   </body>
 </html>

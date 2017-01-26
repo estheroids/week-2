@@ -55,10 +55,55 @@
 
       ===================== */
 
+      /*var hC_keys = Object.keys(healthCenters[0]);
+    healthCenters.forEach(function(hC_k){
+
+  })*/
+
+      var data = healthCenters
+      var LNG = [];
+      var LAT = [];
+      var OBJECTID = [];
+      var NAME = [];
+      var ORGANIZATION = [];
+      var ZIP = [];
+      var PHONE = [];
+      var WEBSITE = [];
+      var DENTAL_PHONE = [];
+      var FULL_ADDRESS = [];
+
+      data.forEach(function(hC){
+        LNG.push(hC.LNG);
+        LAT.push(hC.LAT);
+        OBJECTID.push(hC.OBJECTID);
+        NAME.push(hC.NAME);
+        ORGANIZATION.push(hC.ORGANIZATION);
+        ZIP.push(hC.ZIP);
+        PHONE.push(hC.PHONE);
+        WEBSITE.push(hC.WEBSITE);
+        DENTAL_PHONE.push(hC.DENTAL_PHONE);
+        FULL_ADDRESS.push(hC.FULL_ADDRESS);
+      });
+
       var jsonToCsv = function(json) { console.log(json); };
-
-
       var addMarkers = function(map) {};
+
+      var dental_Icon = L.icon({
+            iconUrl: 'dental_Icon.png',
+            iconSize: [50, 50],
+            iconAnchor: [12, 20],
+        });
+
+        for(i=0; i<ZIP.length; i++){
+          if (ZIP[i] >= 19104 && ZIP[i] <= 19149){
+            if (DENTAL_PHONE[i] === "N/A"){
+              L.marker([LAT[i],LNG[i]]).bindPopup(NAME[i]).addTo(map);
+            }
+            else{
+              L.marker([LAT[i],LNG[i]], {icon: dental_Icon}).addTo(map).bindPopup(NAME[i]);
+            }
+          }
+        };
 
       /* =====================
 

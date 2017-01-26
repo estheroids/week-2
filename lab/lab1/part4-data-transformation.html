@@ -71,6 +71,28 @@
 
     ===================== */
 
+    var dataFiltered = [];
+    for (var i=0; i < data.length; i++){
+    if (data[i][3] > 20){
+      dataFiltered.push(data[i]);
+    }
+  };
+
+  /*
+
+var dataD = bikeArrayDirty;
+var dataFilteredD = [];
+
+for (var i=0; i<data.length; i++){
+  if (dataD[i].length > 3){
+    if (dataD[i][3].includes("stations")){
+      if(dataD[i][3].replace(/^\D+/g, '') > 20){
+      dataFilteredD.push(data[i])
+    }
+  }
+};
+
+*/
 
 
     /* =====================
@@ -98,6 +120,19 @@
 
     ===================== */
 
+
+    for (var i=0; i < dataFiltered.length; i++){
+        L.marker([dataFiltered[i][1],dataFiltered[i][0]]).bindPopup(dataFiltered[i][2]).addTo(map);
+      };
+
+    /*
+
+      for (var i=0; i<dataFilteredD.length; i++){
+      L.marker([parseFloat(dataFilteredD[i][1]),parseFloat(dataFilteredD[i][0])]).bindPopup(dataFilteredD[i][2]).addTo(map);
+      }
+    };
+
+    */
 
 
     /* =====================

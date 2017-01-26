@@ -32,7 +32,32 @@
 
     ===================== */
 
+    /*problem 1*/
 
+    var sum=0
+    for (var i=0; i<1000; i++){
+      if(i%3 === 0 || i%5 === 0){
+        sum += i;
+      }
+    }
+    console.log (sum)
+
+    /*problem 2*/
+
+    var sum=0
+    var x=1
+    var y=2
+
+    while (x<4000000){
+      if (x%2 ===0){
+        sum += x;
+      }
+      var z = x + y;
+      x = y;
+      y = z;
+    };
+
+    console.log(sum)
 
     /* =====================
 

@@ -75,9 +75,23 @@
 
     ===================== */
 
+    var faveats = [
+
+          [39.954005, -75.156279, "Heung Fa Chun Sweet House"],
+          [39.953213, -75.210255, "Honest Tom's Taco Shop"],
+          [39.949086, -75.214406, "Renata's Kitchen"],
+          [39.955731, -75.156700, "Hop Sing Laundromat"],
+          [39.955400, -75.154426, "Terakawa Ramen"]
+        ];
+
+    for (var i=0; i < faveats.length; i++){
+        L.marker([faveats[i][0],faveats[i][1]]).bindPopup(faveats[i][2]).addTo(map)
+    }
+
+
+    /*L.marker([0, 0]).addTo(map);
     L.marker([0, 0]).addTo(map);
-    L.marker([0, 0]).addTo(map);
-    L.marker([0, 0]).addTo(map);
+    L.marker([0, 0]).addTo(map);*/
 
     /* =====================
 
